@@ -45,5 +45,52 @@
 Вы можете использовать любой инструмент для отправки HTTP запросов (например, Postman) для взаимодействия с API.
 
 
+Конфигурация базы данных
+
+Приложение использует базу данных MySQL. Ниже приведены настройки базы данных, которые вы можете установить в файле application.properties:
+spring.datasource.url=jdbc:mysql://localhost:3306/my_db?useSSL=false&serverTimezone=UTC
+spring.datasource.username=bestuser
+spring.datasource.password=bestuser
+
+
+Управление конечными точками (endpoints) Actuator
+Вы можете управлять конечными точками Actuator, добавив следующие настройки в файл application.properties:
+management.endpoint.health.show-details=always
+management.endpoints.web.exposure.include=*
+
+
+4. Создайте базу данных MySQL с именем `my_db`, а затем выполните SQL-скрипт для создания таблицы и вставки начальных данных:
+```sql
+USE my_db;
+
+CREATE TABLE market (
+  id int NOT NULL AUTO_INCREMENT,
+  name varchar(35),
+  model varchar(35),
+  color varchar(30),
+  price int,
+  memory varchar(30),
+  PRIMARY KEY (id)
+);
+
+INSERT INTO my_db.market (name, model, color, price, memory)
+VALUES
+  ('Iphone PROMAX', '15', 'Red', 500, '256g'),
+  ('Ipad PRO', '11', 'Blue', 700, '1024g'),
+  ('MacBook', '16', 'Gray', 850, '2048g'),
+  ('Samsung Galaxy S21', 'S21', 'Black', 600, '256g'),
+  ('Samsung Galaxy Tab S7', 'S7', 'Silver', 800, '512g'),
+  ('Dell XPS 13', 'XPS 13', 'Silver', 1000, '512g'),
+  ('HP Spectre x360', 'Spectre x360', 'Rose Gold', 900, '512g'),
+  ('Google Pixel 6', 'Pixel 6', 'Black', 700, '128g'),
+  ('Google Pixelbook', 'Pixelbook', 'Silver', 1200, '512g'),
+  ('Lenovo ThinkPad X1 Carbon', 'X1 Carbon', 'Black', 1100, '512g'),
+  ('Sony Xperia 1 III', 'Xperia 1 III', 'Purple', 800, '256g'),
+  ('Sony Xperia Tablet Z4', 'Tablet Z4', 'White', 600, '256g'),
+  ('Asus ROG Zephyrus G14', 'Zephyrus G14', 'Gray', 1500, '1024g'),
+  ('Acer Chromebook 14', 'Chromebook 14', 'Silver', 300, '64g');
+
+
+
 
 
