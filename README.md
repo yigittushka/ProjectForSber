@@ -45,15 +45,15 @@
 Вы можете использовать любой инструмент для отправки HTTP запросов (например, Postman) для взаимодействия с API.
 
 
-##Конфигурация базы данных
+# Конфигурация базы данных
 
-Приложение использует базу данных MySQL. Ниже приведены настройки базы данных, которые вы можете установить в файле application.properties:
+## Приложение использует базу данных MySQL. Ниже приведены настройки базы данных, которые вы можете установить в файле application.properties:
 spring.datasource.url=jdbc:mysql://localhost:3306/my_db?useSSL=false&serverTimezone=UTC
 spring.datasource.username=bestuser
 spring.datasource.password=bestuser
 
 
-Управление конечными точками (endpoints) Actuator
+## Управление конечными точками (endpoints) Actuator
 Вы можете управлять конечными точками Actuator, добавив следующие настройки в файл application.properties:
 management.endpoint.health.show-details=always
 management.endpoints.web.exposure.include=*
