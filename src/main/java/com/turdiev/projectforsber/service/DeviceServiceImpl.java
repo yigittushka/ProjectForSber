@@ -1,27 +1,41 @@
 package com.turdiev.projectforsber.service;
 
+import com.turdiev.projectforsber.dao.DeviceRepository;
 import com.turdiev.projectforsber.entity.Device;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
- * Интерфейс, представляющий сервис для работы с устройствами (Device).
+ * Реализация интерфейса DeviceService для работы с устройствами (Device).
  */
-public interface DeviceService {
+@Service
+public class DeviceServiceImpl implements DeviceService {
+
+    @Autowired
+    private DeviceRepository deviceRepository;
 
     /**
      * Получить список всех устройств.
      *
      * @return Список всех устройств.
      */
-    public List<Device> getAllDevices();
+    @Override
+    public List<Device> getAllDevices() {
+        return deviceRepository.findAll();
+    }
 
     /**
      * Сохранить устройство.
      *
      * @param device Устройство для сохранения.
      */
-    public void saveDevice(Device device);
+    @Override
+    public void saveDevice(Device device) {
+        deviceRepository.save(device);
+    }
 
     /**
      * Получить устройство по его идентификатору.
@@ -29,14 +43,25 @@ public interface DeviceService {
      * @param id Идентификатор устройства.
      * @return Устройство с указанным идентификатором или null, если не найдено.
      */
-    public Device getDeviceId(int id);
+    @Override
+    public Device getDeviceId(int id) {
+        Device device = null;
+        Optional<Device> optionalDevice = deviceRepository.findById(id);
+        if (optionalDevice.isPresent()) {
+            device = optionalDevice.get();
+        }
+        return device;
+    }
 
     /**
      * Удалить устройство по его идентификатору.
      *
      * @param id Идентификатор устройства.
      */
-    public void deleteDevice(int id);
+    @Override
+    public void deleteDevice(int id) {
+        deviceRepository.deleteById(id);
+    }
 
     /**
      * Найти устройства по имени.
@@ -44,7 +69,10 @@ public interface DeviceService {
      * @param name Имя, по которому выполняется поиск устройств.
      * @return Список устройств с указанным именем.
      */
-    public List<Device> findAllByName(String name);
+    @Override
+    public List<Device> findAllByName(String name) {
+        return deviceRepository.findAllByName(name);
+    }
 
     /**
      * Найти устройства по модели.
@@ -52,7 +80,10 @@ public interface DeviceService {
      * @param model Модель, по которой выполняется поиск устройств.
      * @return Список устройств с указанной моделью.
      */
-    public List<Device> findAllByModel(String model);
+    @Override
+    public List<Device> findAllByModel(String model) {
+        return deviceRepository.findAllByModel(model);
+    }
 
     /**
      * Найти устройства по цвету.
@@ -60,7 +91,10 @@ public interface DeviceService {
      * @param color Цвет, по которому выполняется поиск устройств.
      * @return Список устройств с указанным цветом.
      */
-    public List<Device> findAllByColor(String color);
+    @Override
+    public List<Device> findAllByColor(String color) {
+        return deviceRepository.findAllByColor(color);
+    }
 
     /**
      * Найти устройства по цене.
@@ -68,7 +102,10 @@ public interface DeviceService {
      * @param price Цена, по которой выполняется поиск устройств.
      * @return Список устройств с указанной ценой.
      */
-    public List<Device> findAllByPrice(int price);
+    @Override
+    public List<Device> findAllByPrice(int price) {
+        return deviceRepository.findAllByPrice(price);
+    }
 
     /**
      * Найти устройства по объему памяти.
@@ -76,5 +113,8 @@ public interface DeviceService {
      * @param memory Объем памяти, по которому выполняется поиск устройств.
      * @return Список устройств с указанным объемом памяти.
      */
-    public List<Device> findAllByMemory(String memory);
+    @Override
+    public List<Device> findAllByMemory(String memory) {
+        return deviceRepository.findAllByMemory(memory);
+    }
 }
