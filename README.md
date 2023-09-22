@@ -48,15 +48,15 @@
 # Конфигурация базы данных
 
 ## Приложение использует базу данных MySQL. Ниже приведены настройки базы данных, которые вы можете установить в файле application.properties:
-spring.datasource.url=jdbc:mysql://localhost:3306/my_db?useSSL=false&serverTimezone=UTC
-spring.datasource.username=bestuser
-spring.datasource.password=bestuser
+- `spring.datasource.url=jdbc:mysql://localhost:3306/my_db?useSSL=false&serverTimezone=UTC`
+- `spring.datasource.username=bestuser`
+- `spring.datasource.password=bestuser`
 
 
 ## Управление конечными точками (endpoints) Actuator
 Вы можете управлять конечными точками Actuator, добавив следующие настройки в файл application.properties:
-management.endpoint.health.show-details=always
-management.endpoints.web.exposure.include=*
+- `management.endpoint.health.show-details=always`
+- `management.endpoints.web.exposure.include=*`
 
 
 ## Создайте базу данных MySQL с именем `my_db`, а затем выполните SQL-скрипт для создания таблицы и вставки начальных данных:
