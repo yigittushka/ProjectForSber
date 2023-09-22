@@ -45,7 +45,7 @@
 Вы можете использовать любой инструмент для отправки HTTP запросов (например, Postman) для взаимодействия с API.
 
 
-Конфигурация базы данных
+##Конфигурация базы данных
 
 Приложение использует базу данных MySQL. Ниже приведены настройки базы данных, которые вы можете установить в файле application.properties:
 spring.datasource.url=jdbc:mysql://localhost:3306/my_db?useSSL=false&serverTimezone=UTC
@@ -59,7 +59,7 @@ management.endpoint.health.show-details=always
 management.endpoints.web.exposure.include=*
 
 
-4. Создайте базу данных MySQL с именем `my_db`, а затем выполните SQL-скрипт для создания таблицы и вставки начальных данных:
+## Создайте базу данных MySQL с именем `my_db`, а затем выполните SQL-скрипт для создания таблицы и вставки начальных данных:
 ```sql
 USE my_db;
 
