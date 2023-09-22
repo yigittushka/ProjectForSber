@@ -75,20 +75,20 @@ CREATE TABLE market (
 
 INSERT INTO my_db.market (name, model, color, price, memory)
 VALUES
-  ('Iphone PROMAX', '15', 'Red', 500, '256g'),
-  ('Ipad PRO', '11', 'Blue', 700, '1024g'),
+  ('Iphone_PROMAX', '15', 'Red', 500, '256g'),
+  ('Ipad_PRO', '11', 'Blue', 700, '1024g'),
   ('MacBook', '16', 'Gray', 850, '2048g'),
-  ('Samsung Galaxy S21', 'S21', 'Black', 600, '256g'),
-  ('Samsung Galaxy Tab S7', 'S7', 'Silver', 800, '512g'),
-  ('Dell XPS 13', 'XPS 13', 'Silver', 1000, '512g'),
-  ('HP Spectre x360', 'Spectre x360', 'Rose Gold', 900, '512g'),
-  ('Google Pixel 6', 'Pixel 6', 'Black', 700, '128g'),
-  ('Google Pixelbook', 'Pixelbook', 'Silver', 1200, '512g'),
-  ('Lenovo ThinkPad X1 Carbon', 'X1 Carbon', 'Black', 1100, '512g'),
-  ('Sony Xperia 1 III', 'Xperia 1 III', 'Purple', 800, '256g'),
-  ('Sony Xperia Tablet Z4', 'Tablet Z4', 'White', 600, '256g'),
-  ('Asus ROG Zephyrus G14', 'Zephyrus G14', 'Gray', 1500, '1024g'),
-  ('Acer Chromebook 14', 'Chromebook 14', 'Silver', 300, '64g');
+  ('Samsung_Galaxy_S21', 'S21', 'Black', 600, '256g'),
+  ('Samsung_Galaxy_Tab_S7', 'S7', 'Silver', 800, '512g'),
+  ('Dell_XPS_13', 'XPS_13', 'Silver', 1000, '512g'),
+  ('HP_Spectre_x360', 'Spectre_x360', 'Rose Gold', 900, '512g'),
+  ('Google_Pixel_6', 'Pixel_6', 'Black', 700, '128g'),
+  ('Google_Pixelbook', 'Pixelbook', 'Silver', 1200, '512g'),
+  ('Lenovo_ThinkPad_X1_Carbon', 'X1_Carbon', 'Black', 1100, '512g'),
+  ('Sony_Xperia_1_III', 'Xperia_1_III', 'Purple', 800, '256g'),
+  ('Sony_Xperia_Tablet_Z4', 'Tablet_Z4', 'White', 600, '256g'),
+  ('Asus_ROG_Zephyrus_G14', 'Zephyrus_G14', 'Gray', 1500, '1024g'),
+  ('Acer_Chromebook_14', 'Chromebook_14', 'Silver', 300, '64g');
 
 
 
